@@ -33,6 +33,8 @@ public class CharacterManager : MonoBehaviour
         {
             haveItem = true;
             itemID = clickedItemManager.clickedItem.ID;
+            clickedItemManager.clickedItem.RemoveItem();
+            clickedItemManager.clickedItem = null;
 
             Debug.Log("got an item " + itemID);
         }

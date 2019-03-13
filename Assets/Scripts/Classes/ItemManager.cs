@@ -13,4 +13,9 @@ public class ItemManager : MonoBehaviour, IPointerClickHandler
     {
         transform.parent.GetComponent<ClickedItemManager>().clickedItem = this;
     }
+
+    public void RemoveItem()
+    {
+        Destroy(gameObject);
+    }
 }
