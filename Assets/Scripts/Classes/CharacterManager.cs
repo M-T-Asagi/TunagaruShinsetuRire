@@ -29,7 +29,7 @@ public class CharacterManager : MonoBehaviour
     public void OnCharacterMoveStop(object sender, ClickToMove.WalkingStopEventArgs args)
     {
         Debug.Log("Stop character");
-        if(clickedItemManager != null)
+        if(clickedItemManager.clickedItem != null)
         {
             haveItem = true;
             itemID = clickedItemManager.clickedItem.ID;
