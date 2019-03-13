@@ -5,4 +5,9 @@ using UnityEngine;
 public class ClickedItemManager : MonoBehaviour
 {
     public ItemManager clickedItem { get; set; }
+
+    public void UnClick()
+    {
+        clickedItem = null;
+    }
 }

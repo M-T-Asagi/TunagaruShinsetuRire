@@ -9,7 +9,10 @@ public class CharacterManager : MonoBehaviour
     ClickToMove clickToMove = null;
 
     [SerializeField]
-    ClickedItemManager clickedItemManager;
+    ClickedItemManager clickedItemManager = null;
+
+    [SerializeField]
+    ClickedCharacterManager clickedCharacterManager = null;
 
     [SerializeField]
     float canGetItemDistance = 0.3f;
@@ -29,6 +32,7 @@ public class CharacterManager : MonoBehaviour
     public void OnCharacterMoveStop(object sender, ClickToMove.WalkingStopEventArgs args)
     {
         Debug.Log("Stop character");
+
         if(clickedItemManager.clickedItem != null)
         {
             haveItem = true;
@@ -38,5 +42,21 @@ public class CharacterManager : MonoBehaviour
 
             Debug.Log("got an item " + itemID);
         }
+
+        if (clickedCharacterManager.clickedCharacter != null)
+        {
+            PassItem();
+        }
+    }
+
+    void PassItem()
+    {
+        if (!haveItem)
+            return;
+
+        if (itemID != clickedCharacterManager.clickedCharacter.WantObjectID)
+            return;
+
+        Debug.Log("Get score.");
     }
 }
