@@ -57,6 +57,8 @@ public class CharacterManager : MonoBehaviour
         if (itemID != clickedCharacterManager.clickedCharacter.WantObjectID)
             return;
 
+        haveItem = false;
+        itemID = -1;
         Debug.Log("Get score.");
     }
 }

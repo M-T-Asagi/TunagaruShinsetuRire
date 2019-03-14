@@ -10,10 +10,17 @@ public class ItemManager : MonoBehaviour, IPointerClickHandler
     public int ID { get { return id; } }
 
     [SerializeField]
-    ClickToMove clickToMove = null;
+    string characterControllerTagName = "CharacterController";
 
     [SerializeField]
     LayerMask layerMask = new LayerMask();
+
+    ClickToMove clickToMove;
+
+    private void Start()
+    {
+        clickToMove = GameObject.FindGameObjectWithTag(characterControllerTagName).GetComponent<ClickToMove>();
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
