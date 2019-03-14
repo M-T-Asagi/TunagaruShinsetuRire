@@ -17,12 +17,15 @@ public class CharacterManager : MonoBehaviour
     [SerializeField]
     float canGetItemDistance = 0.3f;
 
+    [SerializeField]
+    List<GameObject> characterList = null;
+
     bool haveItem = false;
     public bool HaveItem { get { return haveItem; } }
 
     int itemID = -1;
     public int ItemID { get { return itemID; } set { itemID = value; haveItem = true; } }
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -60,5 +63,17 @@ public class CharacterManager : MonoBehaviour
         haveItem = false;
         itemID = -1;
         Debug.Log("Get score.");
+
+        CharacterChange(clickedCharacterManager.clickedCharacter.CharacterID);
+        clickedCharacterManager.clickedCharacter.RemoveCharacter();
+        clickedCharacterManager.clickedCharacter = null;
+    }
+
+    void CharacterChange(int characterID)
+    {
+        Transform nowCharacter = transform.GetChild(0);
+        GameObject newCharacter = Instantiate(characterList[characterID], nowCharacter.position, nowCharacter.rotation, transform);
+        Destroy(nowCharacter.gameObject);
+        clickToMove.SetNavMeshAgent(newCharacter.GetComponent<UnityEngine.AI.NavMeshAgent>());
     }
 }

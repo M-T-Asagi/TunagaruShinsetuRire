@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9daf446a7e2387344adc4944ab899ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterID: 2
   wantObjectID: 2
   characterControllerTagName: CharacterController
   layerMask:

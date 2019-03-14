@@ -6,6 +6,10 @@ using UnityEngine.EventSystems;
 public class CitytCharacterManager : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField]
+    int characterID = 0;
+    public int CharacterID { get { return characterID; } }
+
+    [SerializeField]
     int wantObjectID = 0;
     public int WantObjectID { get { return wantObjectID; } }
 
