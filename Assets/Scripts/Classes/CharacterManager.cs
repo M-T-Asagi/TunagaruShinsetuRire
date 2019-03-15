@@ -35,6 +35,7 @@ public class CharacterManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SetNewPlayerCharacter(Random.Range(0, characterList.Count - 1), transform.position, Quaternion.identity);
         clickToMove.WalkingStop += OnCharacterMoveStop;
     }
 
@@ -78,8 +79,14 @@ public class CharacterManager : MonoBehaviour
     void CharacterChange(int characterID)
     {
         Transform nowCharacter = transform.GetChild(0);
-        GameObject newCharacter = Instantiate(characterList[characterID], nowCharacter.position, nowCharacter.rotation, transform);
+        SetNewPlayerCharacter(characterID, nowCharacter.position, Quaternion.LookRotation(-nowCharacter.forward, Vector3.up));
         Destroy(nowCharacter.gameObject);
+    }
+
+    void SetNewPlayerCharacter(int characterID, Vector3 position, Quaternion rotation)
+    {
+        GameObject newCharacter = Instantiate(characterList[characterID], position, rotation, transform);
+
         clickToMove.SetNavMeshAgent(newCharacter.GetComponent<UnityEngine.AI.NavMeshAgent>());
     }
 }
