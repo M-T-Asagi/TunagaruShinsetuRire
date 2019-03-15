@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene:
-    m_SceneName: TapToWalkTest
+    m_SceneName: GameMain
 --- !u!1 &510385467
 GameObject:
   m_ObjectHideFlags: 0

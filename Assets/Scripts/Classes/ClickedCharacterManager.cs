@@ -6,6 +6,11 @@ public class ClickedCharacterManager : MonoBehaviour
 {
     public CitytCharacterManager clickedCharacter { get; set; }
 
+    private void Start()
+    {
+        clickedCharacter = null;
+    }
+
     public void UnClick()
     {
         clickedCharacter = null;

@@ -5,6 +5,11 @@ using TMPro;
 
 public class TimeManager : MonoBehaviour
 {
+    public class GameStartEventArgs : System.EventArgs
+    {
+
+    }
+
     public class GameFinishEventArgs : System.EventArgs
     {
 
@@ -14,16 +19,33 @@ public class TimeManager : MonoBehaviour
     int totalSeconds = 90;
 
     [SerializeField]
-    TextMeshProUGUI reamingTimeText;
+    TextMeshProUGUI reamingTimeText = null;
 
+    [SerializeField]
+    Animator startCountDownAnimator = null;
+
+    public System.EventHandler<GameStartEventArgs> gameStart;
     public System.EventHandler<GameFinishEventArgs> gameFinish;
 
     float startTime = 0;
     bool gaming = false;
+    public bool Gaming { get { return gaming; } }
+
+    void Start()
+    {
+        StartGame();
+    }
 
     public void StartGame()
     {
         Debug.Log("Game started!");
+        startCountDownAnimator.SetBool("GameStart", true);
+        StartCoroutine(_StartGame());
+    }
+
+    IEnumerator _StartGame()
+    {
+        yield return new WaitForSeconds(3f);
 
         gaming = true;
         startTime = Time.time;
@@ -31,10 +53,10 @@ public class TimeManager : MonoBehaviour
         string newTime = (totalSeconds / 60) + ":" + (totalSeconds % 60);
         reamingTimeText.text = newTime;
 
-        gameFinish += (object sender, GameFinishEventArgs args) =>
-        {
-            Debug.Log("Game is end");
-        };
+        gameStart?.Invoke(this, new GameStartEventArgs());
+
+        yield return new WaitForSeconds(2f);
+        startCountDownAnimator.SetBool("GameStart", false);
     }
 
     // Update is called once per frame
@@ -60,13 +82,5 @@ public class TimeManager : MonoBehaviour
     {
         gaming = false;
         gameFinish?.Invoke(this, new GameFinishEventArgs());
-    }
-
-    private void OnGUI()
-    {
-        if(GUI.Button(new Rect(0, 500, 100, 100), "Game Start"))
-        {
-            StartGame();
-        }
     }
 }

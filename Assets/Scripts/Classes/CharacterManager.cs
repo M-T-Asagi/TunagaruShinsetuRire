@@ -12,6 +12,9 @@ public class CharacterManager : MonoBehaviour
     ScoreManager scoreManager = null;
 
     [SerializeField]
+    TimeManager timeManager = null;
+
+    [SerializeField]
     ClickedItemManager clickedItemManager = null;
 
     [SerializeField]
@@ -57,10 +60,7 @@ public class CharacterManager : MonoBehaviour
 
     void PassItem()
     {
-        if (!haveItem)
-            return;
-
-        if (itemID != clickedCharacterManager.clickedCharacter.WantObjectID)
+        if (!timeManager.Gaming || !haveItem || itemID != clickedCharacterManager.clickedCharacter.WantObjectID)
             return;
 
         haveItem = false;
