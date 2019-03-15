@@ -25,26 +25,30 @@ public class ItemCharacterArranger : MonoBehaviour
         foreach (Transform child in transform)
         {
             children.Add(child);
-            reamingBoxIndexes.Add(reamingBoxIndexes.Count);
+            reamingBoxIndexes.Add(child.GetSiblingIndex());
         }
         
         for(int i = 0; i < 4; i++)
         {
-            int characterItemIndex = Random.Range(0, itemCharacterPairList.Count - 1);
-            
-            int indexBuff = Random.Range(0, reamingBoxIndexes.Count - 1);
-            Instantiate(itemCharacterPairList[characterItemIndex].Character, children[reamingBoxIndexes[indexBuff]]);
-            reamingBoxIndexes.RemoveAt(indexBuff);
-
-            indexBuff = Random.Range(0, reamingBoxIndexes.Count - 1);
-            Instantiate(itemCharacterPairList[characterItemIndex].Item, children[reamingBoxIndexes[indexBuff]]);
-            reamingBoxIndexes.RemoveAt(indexBuff);
+            AddItemAndCharacter();
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ReleaseBox(Transform box)
     {
-        
+        reamingBoxIndexes.Add(box.GetSiblingIndex());
+    }
+
+    public void AddItemAndCharacter()
+    {
+        int characterItemIndex = Random.Range(0, itemCharacterPairList.Count - 1);
+
+        int indexBuff = Random.Range(0, reamingBoxIndexes.Count - 1);
+        Instantiate(itemCharacterPairList[characterItemIndex].Character, children[reamingBoxIndexes[indexBuff]]);
+        reamingBoxIndexes.RemoveAt(indexBuff);
+
+        indexBuff = Random.Range(0, reamingBoxIndexes.Count - 1);
+        Instantiate(itemCharacterPairList[characterItemIndex].Item, children[reamingBoxIndexes[indexBuff]]);
+        reamingBoxIndexes.RemoveAt(indexBuff);
     }
 }

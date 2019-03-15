@@ -3143,6 +3143,7 @@ MonoBehaviour:
   clickToMove: {fileID: 551343401}
   scoreManager: {fileID: 1627865641}
   timeManager: {fileID: 976748102}
+  itemCharacterArranger: {fileID: 1507030897}
   clickedItemManager: {fileID: 1507030895}
   clickedCharacterManager: {fileID: 1507030896}
   canGetItemDistance: 1

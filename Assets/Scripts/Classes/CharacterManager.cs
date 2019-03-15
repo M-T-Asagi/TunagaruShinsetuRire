@@ -15,6 +15,9 @@ public class CharacterManager : MonoBehaviour
     TimeManager timeManager = null;
 
     [SerializeField]
+    ItemCharacterArranger itemCharacterArranger = null;
+
+    [SerializeField]
     ClickedItemManager clickedItemManager = null;
 
     [SerializeField]
@@ -48,6 +51,7 @@ public class CharacterManager : MonoBehaviour
             haveItem = true;
             itemID = clickedItemManager.clickedItem.ID;
             clickedItemManager.clickedItem.RemoveItem();
+            itemCharacterArranger.ReleaseBox(clickedItemManager.clickedItem.transform.parent);
             clickedItemManager.clickedItem = null;
 
             Debug.Log("got an item " + itemID);
@@ -73,6 +77,7 @@ public class CharacterManager : MonoBehaviour
 
         CharacterChange(clickedCharacterManager.clickedCharacter.CharacterID);
         clickedCharacterManager.clickedCharacter.RemoveCharacter();
+        itemCharacterArranger.ReleaseBox(clickedCharacterManager.clickedCharacter.transform.parent);
         clickedCharacterManager.clickedCharacter = null;
     }
 
@@ -81,6 +86,7 @@ public class CharacterManager : MonoBehaviour
         Transform nowCharacter = transform.GetChild(0);
         SetNewPlayerCharacter(characterID, nowCharacter.position, Quaternion.LookRotation(-nowCharacter.forward, Vector3.up));
         Destroy(nowCharacter.gameObject);
+        itemCharacterArranger.AddItemAndCharacter();
     }
 
     void SetNewPlayerCharacter(int characterID, Vector3 position, Quaternion rotation)
