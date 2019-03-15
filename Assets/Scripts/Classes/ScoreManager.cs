@@ -15,4 +15,14 @@ public class ScoreManager : MonoBehaviour
             scoreNumber.text = score.ToString();
         }
     }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
+    public void OnReStartGame()
+    {
+        Destroy(gameObject);
+    }
 }

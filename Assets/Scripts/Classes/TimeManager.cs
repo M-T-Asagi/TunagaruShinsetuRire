@@ -39,6 +39,7 @@ public class TimeManager : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Game started!");
+        SetTimeText(totalSeconds);
         startCountDownAnimator.SetBool("GameStart", true);
         StartCoroutine(_StartGame());
     }
@@ -66,16 +67,20 @@ public class TimeManager : MonoBehaviour
         if(gaming)
         {
             int elapsedTime = (int)(timeNow - startTime);
-
             int reamingTime = totalSeconds - elapsedTime;
-            string newTime = (reamingTime > 0) ? (reamingTime / 60) + ":" + (reamingTime % 60) : "0:00";
-            reamingTimeText.text = newTime;
+            SetTimeText(reamingTime);
 
             if (reamingTime <= 0)
             {
                 FinishGaming();
             }
         }
+    }
+
+    void SetTimeText(int reamingTime)
+    {
+        string newTime = (reamingTime > 0) ? (reamingTime / 60) + ":" + (reamingTime % 60) : "0:00";
+        reamingTimeText.text = newTime;
     }
 
     public void FinishGaming()

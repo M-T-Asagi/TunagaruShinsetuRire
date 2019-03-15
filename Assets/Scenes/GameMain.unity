@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickToMove: {fileID: 551343401}
-  scoreManager: {fileID: 976748101}
+  scoreManager: {fileID: 1627865641}
   timeManager: {fileID: 976748102}
   clickedItemManager: {fileID: 1507030895}
   clickedCharacterManager: {fileID: 968636631}
@@ -1111,8 +1111,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 976748100}
-  - component: {fileID: 976748101}
   - component: {fileID: 976748102}
+  - component: {fileID: 976748101}
+  - component: {fileID: 976748103}
   m_Layer: 0
   m_Name: Stage
   m_TagString: Untagged
@@ -1146,10 +1147,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 976748099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 035fabe689436284f91c5f245dde6ffc, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a4f8bde19fcda240a57e20fbf15f96d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreNumber: {fileID: 563558732}
+  scene:
+    m_SceneName: FinishPanel
 --- !u!114 &976748102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1162,9 +1164,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e669b7da66512749aee5ed8d489a2ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalSeconds: 90
+  totalSeconds: 2
   reamingTimeText: {fileID: 2016121969}
   startCountDownAnimator: {fileID: 1059050340}
+--- !u!114 &976748103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976748099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06fb1b8b43f7e0b4aaa7a6d6753c410f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneSwitcher: {fileID: 976748101}
+  timeManager: {fileID: 976748102}
 --- !u!4 &1049437358 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9049452167627495836, guid: c7cd4ef4811174d4a963d5dae6342fd5,
@@ -2064,6 +2080,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac31fb7bbd03e44b8ef34dfe0bee7f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1627865640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1627865642}
+  - component: {fileID: 1627865641}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: ScoreManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1627865641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627865640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035fabe689436284f91c5f245dde6ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreNumber: {fileID: 563558732}
+--- !u!4 &1627865642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627865640}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1688139673
 GameObject:
   m_ObjectHideFlags: 0

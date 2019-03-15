@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartPanelToGameMainSceneSwitcher : MonoBehaviour
+public class SceneSwitcher : MonoBehaviour
 {
     [SerializeField]
     SceneObject scene;
