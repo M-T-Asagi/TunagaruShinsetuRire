@@ -1164,7 +1164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e669b7da66512749aee5ed8d489a2ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalSeconds: 2
+  totalSeconds: 90
   reamingTimeText: {fileID: 2016121969}
   startCountDownAnimator: {fileID: 1059050340}
 --- !u!114 &976748103
