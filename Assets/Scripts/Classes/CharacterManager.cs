@@ -9,6 +9,9 @@ public class CharacterManager : MonoBehaviour
     ClickToMove clickToMove = null;
 
     [SerializeField]
+    ScoreManager scoreManager = null;
+
+    [SerializeField]
     ClickedItemManager clickedItemManager = null;
 
     [SerializeField]
@@ -62,7 +65,10 @@ public class CharacterManager : MonoBehaviour
 
         haveItem = false;
         itemID = -1;
-        Debug.Log("Get score.");
+
+        int gotScore = transform.GetChild(0).GetComponent<CharacterSettings>().GettingScore;
+        Debug.Log("Get score: " + gotScore);
+        scoreManager.Score += gotScore;
 
         CharacterChange(clickedCharacterManager.clickedCharacter.CharacterID);
         clickedCharacterManager.clickedCharacter.RemoveCharacter();
