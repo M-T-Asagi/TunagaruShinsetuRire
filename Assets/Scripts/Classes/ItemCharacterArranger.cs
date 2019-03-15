@@ -41,13 +41,13 @@ public class ItemCharacterArranger : MonoBehaviour
 
     public void AddItemAndCharacter()
     {
-        int characterItemIndex = Random.Range(0, itemCharacterPairList.Count - 1);
+        int characterItemIndex = Random.Range(0, itemCharacterPairList.Count);
 
-        int indexBuff = Random.Range(0, reamingBoxIndexes.Count - 1);
+        int indexBuff = Random.Range(0, reamingBoxIndexes.Count);
         Instantiate(itemCharacterPairList[characterItemIndex].Character, children[reamingBoxIndexes[indexBuff]]);
         reamingBoxIndexes.RemoveAt(indexBuff);
 
-        indexBuff = Random.Range(0, reamingBoxIndexes.Count - 1);
+        indexBuff = Random.Range(0, reamingBoxIndexes.Count);
         Instantiate(itemCharacterPairList[characterItemIndex].Item, children[reamingBoxIndexes[indexBuff]]);
         reamingBoxIndexes.RemoveAt(indexBuff);
     }
