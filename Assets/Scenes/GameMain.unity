@@ -3144,7 +3144,7 @@ MonoBehaviour:
   scoreManager: {fileID: 1627865641}
   timeManager: {fileID: 976748102}
   clickedItemManager: {fileID: 1507030895}
-  clickedCharacterManager: {fileID: 0}
+  clickedCharacterManager: {fileID: 1507030896}
   canGetItemDistance: 1
   characterList:
   - {fileID: 4609474691120775387, guid: 8039e184890aaee49a6ee19d76bc7640, type: 3}
@@ -8006,9 +8006,10 @@ GameObject:
   - component: {fileID: 1507030894}
   - component: {fileID: 1507030895}
   - component: {fileID: 1507030896}
+  - component: {fileID: 1507030897}
   m_Layer: 0
   m_Name: ItemsAndCharactersObjects
-  m_TagString: Untagged
+  m_TagString: CityObjectsManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8063,6 +8064,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5df156179fbd43a149da6f41c6452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1507030897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507030893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b30908f964790d419e0524350439359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemCharacterPairList:
+  - Character: {fileID: 9070567504355296614, guid: 5916a2fa6554726408f8e77685893a5f,
+      type: 3}
+    Item: {fileID: 4512470535316876457, guid: 0deb932f3bbfda74b87e94339a600a7c, type: 3}
+  - Character: {fileID: 6174640270852912878, guid: 6439407171296a04fab73291000b5c41,
+      type: 3}
+    Item: {fileID: 9049452167627495837, guid: c7cd4ef4811174d4a963d5dae6342fd5, type: 3}
+  - Character: {fileID: 1754841289078985273, guid: 85820998598253d458f797123f1d0bd5,
+      type: 3}
+    Item: {fileID: 1892379778258993068, guid: 1879f1a8ed2258c409110e33df9f8843, type: 3}
 --- !u!43 &1509640622
 Mesh:
   m_ObjectHideFlags: 0

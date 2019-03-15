@@ -28,7 +28,7 @@ public class CitytCharacterManager : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        transform.parent.GetComponent<ClickedCharacterManager>().clickedCharacter = this;
+        GameObject.FindGameObjectWithTag("CityObjectsManager").GetComponent<ClickedCharacterManager>().clickedCharacter = this;
 
         RaycastHit raycastHit = new RaycastHit();
         if (Physics.Raycast(((PointerEventData)eventData).pointerCurrentRaycast.worldPosition, Vector3.down, out raycastHit, 1))
