@@ -24,6 +24,7 @@ public class ItemManager : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log("aaaaaaaaaaaaaaaaaaa");
         GameObject.FindGameObjectWithTag("CityObjectsManager").GetComponent<ClickedItemManager>().clickedItem = this;
         RaycastHit raycastHit = new RaycastHit();
         if(Physics.Raycast(((PointerEventData)eventData).pointerCurrentRaycast.worldPosition, Vector3.down, out raycastHit, 1))
