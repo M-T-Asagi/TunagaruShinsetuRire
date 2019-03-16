@@ -156,6 +156,43 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95927801800421072, guid: 73ef1557cb433344b93ac132a792329d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9b3e3b8ce25eaea498c0e947351969be, type: 2}
+    - target: {fileID: 4534355900661062, guid: 73ef1557cb433344b93ac132a792329d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071077
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534355900661062, guid: 73ef1557cb433344b93ac132a792329d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.00028154056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534355900661062, guid: 73ef1557cb433344b93ac132a792329d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.70710576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534355900661062, guid: 73ef1557cb433344b93ac132a792329d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.00028154135
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099227210245590, guid: 73ef1557cb433344b93ac132a792329d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071077
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099227210245590, guid: 73ef1557cb433344b93ac132a792329d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.00028154056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099227210245590, guid: 73ef1557cb433344b93ac132a792329d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.70710576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099227210245590, guid: 73ef1557cb433344b93ac132a792329d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.00028154135
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73ef1557cb433344b93ac132a792329d, type: 3}
 --- !u!1 &112836594589874712 stripped

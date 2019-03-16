@@ -4414,17 +4414,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_MethodName: UnClick
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -4958,6 +4947,7 @@ GameObject:
   - component: {fileID: 551343402}
   - component: {fileID: 551343401}
   - component: {fileID: 551343403}
+  - component: {fileID: 551343404}
   m_Layer: 0
   m_Name: CharacterWrapper
   m_TagString: CharacterController
@@ -5017,6 +5007,20 @@ MonoBehaviour:
   - {fileID: 4609474691120775387, guid: 8039e184890aaee49a6ee19d76bc7640, type: 3}
   - {fileID: 4952317404454915835, guid: 54eed297e3638a143a13d69611053b1e, type: 3}
   - {fileID: 1452711923837257613, guid: 5cc374314438cd8499fdd45f7aa0d243, type: 3}
+--- !u!114 &551343404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551343400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eca93a5d5750a04b8c56e1b83ae67e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickToMove: {fileID: 551343401}
+  characterManager: {fileID: 551343403}
 --- !u!1 &563558730
 GameObject:
   m_ObjectHideFlags: 0
@@ -5604,7 +5608,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178624
+  m_Name: pb_Mesh274026
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -9550,7 +9554,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178246
+  m_Name: pb_Mesh273662
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -10479,7 +10483,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-476762
+  m_Name: pb_Mesh273910
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -12236,7 +12240,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178300
+  m_Name: pb_Mesh273716
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -12396,7 +12400,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh178756
+  m_Name: pb_Mesh274172
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -15899,7 +15903,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-476988
+  m_Name: pb_Mesh274080
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2

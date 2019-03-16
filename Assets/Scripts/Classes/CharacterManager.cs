@@ -5,6 +5,16 @@ using UnityEngine.EventSystems;
 
 public class CharacterManager : MonoBehaviour
 {
+    public class CharacterChangedEventArgs : System.EventArgs
+    {
+        public GameObject newCharacterObject;
+
+        public CharacterChangedEventArgs(GameObject _newCharacter)
+        {
+            newCharacterObject = _newCharacter;
+        }
+    }
+
     [SerializeField]
     ClickToMove clickToMove = null;
 
@@ -28,6 +38,8 @@ public class CharacterManager : MonoBehaviour
 
     [SerializeField]
     List<GameObject> characterList = null;
+
+    public System.EventHandler<CharacterChangedEventArgs> characterChanged;
 
     bool haveItem = false;
     public bool HaveItem { get { return haveItem; } }
@@ -94,5 +106,6 @@ public class CharacterManager : MonoBehaviour
         GameObject newCharacter = Instantiate(characterList[characterID], position, rotation, transform);
 
         clickToMove.SetNavMeshAgent(newCharacter.GetComponent<UnityEngine.AI.NavMeshAgent>());
+        characterChanged?.Invoke(this, new CharacterChangedEventArgs(newCharacter));
     }
 }
