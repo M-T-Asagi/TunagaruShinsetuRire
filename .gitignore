@@ -35,6 +35,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 Assets/Fonts/*
-Assets/Textmesh pro/*
-!Assets/Textmesh pro/Read.me
 App
+Assets/StoreAssets/*/*
