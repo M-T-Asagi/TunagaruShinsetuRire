@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.InteropServices;
 
 public class TweetLinkOpener : MonoBehaviour
 {
@@ -10,8 +11,9 @@ public class TweetLinkOpener : MonoBehaviour
 
     private void Start()
     {
-        int score = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>().Score;
-        url = URL_BASE + "たくさんの人と親切の輪をつなげて、" + score.ToString() + "もの幸せを振りまきました！すごい！みんなでもっと幸せになろ～！";
+        ScoreManager scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
+        string score = (scoreManager != null) ? scoreManager.Score + "も" : "いっぱい";
+        url = URL_BASE + "たくさんの人と親切の輪をつなげて、" + score + "の幸せを振りまきました！すごい！みんなでもっと幸せになろ～！ 『つながる！しんせつのわ』 https://unityroom.com/games/tsunasin #unity1week #tunasin";
     }
 
     public void OpenLink()
