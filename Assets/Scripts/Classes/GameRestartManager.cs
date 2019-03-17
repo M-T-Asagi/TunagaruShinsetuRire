@@ -9,7 +9,10 @@ public class GameRestartManager : MonoBehaviour
 
     public void RestartGame()
     {
-        GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>().OnReStartGame();
+        GameObject scoreManager = GameObject.FindGameObjectWithTag("ScoreManager");
+        if(scoreManager != null)
+            scoreManager.GetComponent<ScoreManager>().OnReStartGame();
+
         sceneSwitcher.ChangeScene();
     }
 }
