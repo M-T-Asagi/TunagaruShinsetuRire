@@ -11,8 +11,8 @@ public class TweetLinkOpener : MonoBehaviour
 
     private void Start()
     {
-        ScoreManager scoreManager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
-        string score = (scoreManager != null) ? scoreManager.Score + "も" : "いっぱい";
+        GameObject scoreManager = GameObject.FindGameObjectWithTag("ScoreManager");
+        string score = (scoreManager != null) ? scoreManager.GetComponent<ScoreManager>().Score + "も" : "いっぱい";
         url = URL_BASE + "たくさんの人と親切の輪をつなげて、" + score + "の幸せを振りまきました！すごい！みんなでもっと幸せになろ～！ 『つながる！しんせつのわ』 https://unityroom.com/games/tsunasin #unity1week #tunasin";
     }
 
