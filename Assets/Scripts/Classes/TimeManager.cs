@@ -51,8 +51,7 @@ public class TimeManager : MonoBehaviour
         gaming = true;
         startTime = Time.time;
 
-        string newTime = (totalSeconds / 60) + ":" + (totalSeconds % 60);
-        reamingTimeText.text = newTime;
+        SetTimeText(totalSeconds);
 
         gameStart?.Invoke(this, new GameStartEventArgs());
 
@@ -79,7 +78,8 @@ public class TimeManager : MonoBehaviour
 
     void SetTimeText(int reamingTime)
     {
-        string newTime = (reamingTime > 0) ? (reamingTime / 60) + ":" + (reamingTime % 60) : "0:00";
+        int sec = reamingTime % 60;
+        string newTime = (reamingTime > 0) ? (reamingTime / 60) + ":" + (sec < 10 ? "0" : "") + sec : "0:00";
         reamingTimeText.text = newTime;
     }
 
