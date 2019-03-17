@@ -24,6 +24,9 @@ public class TimeManager : MonoBehaviour
     [SerializeField]
     Animator startCountDownAnimator = null;
 
+    [SerializeField]
+    GameStateManager stateManager;
+
     public System.EventHandler<GameStartEventArgs> gameStart;
     public System.EventHandler<GameFinishEventArgs> gameFinish;
 
@@ -39,6 +42,7 @@ public class TimeManager : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Game started!");
+        stateManager.StateNow = GameStateManager.State.CountDown;
         SetTimeText(totalSeconds);
         startCountDownAnimator.SetBool("GameStart", true);
         StartCoroutine(_StartGame());
@@ -48,6 +52,7 @@ public class TimeManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
 
+        stateManager.StateNow = GameStateManager.State.GamePlaying;
         gaming = true;
         startTime = Time.time;
 
@@ -85,6 +90,7 @@ public class TimeManager : MonoBehaviour
 
     public void FinishGaming()
     {
+        stateManager.StateNow = GameStateManager.State.GameEnd;
         gaming = false;
         gameFinish?.Invoke(this, new GameFinishEventArgs());
     }
