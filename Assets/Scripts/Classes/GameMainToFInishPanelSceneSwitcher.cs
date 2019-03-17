@@ -7,15 +7,8 @@ public class GameMainToFInishPanelSceneSwitcher : MonoBehaviour
     [SerializeField]
     SceneSwitcher sceneSwitcher = null;
 
-    [SerializeField]
-    TimeManager timeManager = null;
-
-    // Start is called before the first frame update
-    void Start()
+    public void SceneSwitch()
     {
-        timeManager.gameFinish += (object sender, TimeManager.GameFinishEventArgs args) =>
-        {
-            sceneSwitcher.ChangeScene();
-        };
+        sceneSwitcher.ChangeScene();
     }
 }

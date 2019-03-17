@@ -25,6 +25,9 @@ public class TimeManager : MonoBehaviour
     Animator startCountDownAnimator = null;
 
     [SerializeField]
+    Animator finishCountDownAnimator = null;
+
+    [SerializeField]
     GameStateManager stateManager;
 
     public System.EventHandler<GameStartEventArgs> gameStart;
@@ -33,6 +36,8 @@ public class TimeManager : MonoBehaviour
     float startTime = 0;
     bool gaming = false;
     public bool Gaming { get { return gaming; } }
+
+    bool finishing = false;
 
     void Start()
     {
@@ -73,6 +78,12 @@ public class TimeManager : MonoBehaviour
             int elapsedTime = (int)(timeNow - startTime);
             int reamingTime = totalSeconds - elapsedTime;
             SetTimeText(reamingTime);
+
+            if(reamingTime <= 10 && !finishing)
+            {
+                finishing = true;
+                finishCountDownAnimator.SetBool("Finishing", true);
+            }
 
             if (reamingTime <= 0)
             {
